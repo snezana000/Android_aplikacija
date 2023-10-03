@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Postavite ImageView sa slikom kao pozadinu -->
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pozadina"
+        android:scaleType="centerCrop"
+        android:layout_gravity="fill"
+        android:layout_below="@id/ime"
+        android:layout_above="@id/buttonLogin" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_anchor="@+id/backgroundImage"
+        app:layout_anchorGravity="center">
+
+        <EditText
+            android:id="@+id/ime"
+            android:layout_width="367dp"
+            android:layout_height="39dp"
+            android:background="@drawable/rounded_border"
+            android:hint="Korisničko ime" />
+
+        <EditText
+            android:id="@+id/sifra"
+            android:layout_width="369dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_border"
+            android:hint="Lozinka"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/prijava"
+                android:onClick="Prijava"
+                android:text="Prijava" />
+
+            <Button
+                android:id="@+id/buttonRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/registracija"
+                android:onClick="Registracija"
+                android:text="Registracija" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
